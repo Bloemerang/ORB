@@ -6,7 +6,7 @@ trait Connector {
     var   to:Location
     var from:Location
 
-    def traverseFrom(loc:Location): Location
+    def traverseFrom(loc:Location)
 }
 
 final class AutoConnector(
@@ -26,7 +26,7 @@ final class AutoConnector(
         }
 }
 
-object Impassable extends Connector {
+final object Impassable extends Connector {
     override var to:Location   = Nowhere
     override var from:Location = Nowhere
 
