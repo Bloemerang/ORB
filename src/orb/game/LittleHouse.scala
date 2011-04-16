@@ -19,4 +19,4 @@ object FrontLawn extends Location {
 }
 
 
-object Game extends Adventure(FrontLawn)
+object Game extends Adventure(FrontLawn, "Welcome to ORB")
