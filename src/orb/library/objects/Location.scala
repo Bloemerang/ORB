@@ -58,9 +58,23 @@ abstract class Location extends Perceptible {
 
     // Automatically convert Locations to connectors to those locations
     implicit def connectToLoc(loc:Location) = new AutoConnector(loc, this)
+
+
+    // Door making
+
+    class DoorBuilder(open:Boolean = false) {
+        def to(loc:Location) = new Door(loc, Location.this, open)
+    }
+    val door = new DoorBuilder
+
+    class OpenDoorBuilder {
+        def door(boilerplate:Int) = new DoorBuilder(true)
+    }
+    val open = new OpenDoorBuilder
+    val leading = 0
 }
 
 object Nowhere extends Location {
-    val name = "Nowhere"
-    val desc = ""
+    name = "Nowhere"
+    desc = ""
 }

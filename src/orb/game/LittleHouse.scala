@@ -9,7 +9,7 @@ object FrontLawn extends Location {
     desc = "A well-kept lawn. To the north is a little house. " +
            "a screen door leads on to the porch"
 
-    n = new Door(FrontPorch, FrontLawn, true)
+    n = open door leading to FrontPorch
 }
 
 object FrontPorch extends Location {
@@ -17,8 +17,8 @@ object FrontPorch extends Location {
     desc = "A nice, tidy porch with a screen door. " +
            "The front door is to the north"
 
-    s = new Door(FrontLawn, FrontPorch, true)
-    n = new Door(Foyer, FrontPorch, true)
+    s = open door leading to FrontLawn
+    n = open door leading to Foyer
 }
 
 object Foyer extends Location {
@@ -27,23 +27,23 @@ object Foyer extends Location {
            "To the east is a door to the cellar; " +
            "to the west is a door into the bathroom."
 
-    s = new Door(FrontPorch, Foyer, true)
-    e = new Door(CellarStairs, Foyer, true)
-    w = new Door(Bathroom, Foyer, true)
+    s = open door leading to FrontPorch
+    e = door to CellarStairs
+    w = open door leading to Bathroom
 }
 
 object CellarStairs extends Location {
     name = "Cellar Stairs"
     desc = "The cellar stairs"
 
-    w = new Door(Foyer, CellarStairs, true)
+    w = door to Foyer
 }
 
 object Bathroom extends Location {
     name = "Bathroom"
     desc = "The bathroom"
 
-    e = new Door(Foyer, Bathroom, true)
+    e = open door leading to Foyer
 }
 
 

@@ -7,7 +7,6 @@ class Door(
     var from:Location,
     var open:Boolean
 ) extends Connector {
-    println("In Door constructor")
     def traverseFrom(loc:Location) = if (open)
         if (loc == to)
             from.acceptTraveler()
