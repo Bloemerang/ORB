@@ -61,6 +61,6 @@ abstract class Location extends Perceptible {
 }
 
 object Nowhere extends Location {
-    val name = "Nowhere"
-    val desc = ""
+    name = "Nowhere"
+    desc = ""
 }
